@@ -2,27 +2,27 @@
 
 .section .data
 value:
-.quad 5
+.word 5
 
 .section .text
 _start:
-        pushq $0
-        movq value, %rax
+        push $0
+        mov value, %ax
 pushvalues:
-        pushq %rax
-        decq %rax
+        push %ax
+        dec %ax
         jnz pushvalues
 
-        movq $1, %rax
+        mov $1, %ax
 multiply:
-        popq %rcx
-        cmpq $0, %rcx
+        pop %cx
+        cmp $0, %cx
         je complete
-        mulq %rcx
+        mul %cx
         jmp multiply
 
 complete:
         # Set return value and exit
-        movq %rax, %rdi
-        movq $60, %rax
+        mov %al, %dil
+        mov $60, %ax
         syscall
