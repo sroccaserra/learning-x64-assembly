@@ -12,6 +12,9 @@ build/%.o: src/%.s build
 bin/runexponent: bin build/runexponent.o build/exponentfunc.o
 	ld -o bin/runexponent build/runexponent.o build/exponentfunc.o
 
+bin/runexponentc: bin src/runexponent.c src/exponentfunc.s
+	gcc -o bin/runexponentc src/runexponent.c src/exponentfunc.s
+
 bin:
 	mkdir -p bin
 
