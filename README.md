@@ -104,4 +104,5 @@ Then, at the end of the function, these steps should be reversed:
 
 The `enter` and `leave` instruction do something equivalent.
 
-Always allocate multiples of 16 bytes to keep the stack alligned.
+Always allocate multiples of 16 bytes (this is two quadwords, or 128 bits) to
+keep the stack alligned.

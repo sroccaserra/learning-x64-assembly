@@ -1,4 +1,4 @@
-.globl exponent
+.global exponent
 .type exponent, @function
 
 .section .text

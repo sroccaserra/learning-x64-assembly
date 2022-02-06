@@ -1,4 +1,4 @@
-.globl _start
+.global _start
 
 .section .data
 curtime:
